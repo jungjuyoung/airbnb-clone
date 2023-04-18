@@ -1,8 +1,8 @@
 import { Banner } from '@/components/Banner';
+import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { LargeCard } from '@/components/LargeCard';
 import { MediumCard } from '@/components/MediumCard';
-import { isTemplateExpression } from 'typescript';
 import { SmallCard } from '../components/SmallCard';
 
 interface exploreInterface {
@@ -104,6 +104,7 @@ export default function Home({
             ))}
           </div>
         </section>
+
         <LargeCard
           img='https://links.papareact.com/4cj'
           title='The Greatest Outdoor'
@@ -111,6 +112,7 @@ export default function Home({
           buttonText='Get Inspired'
         />
       </main>
+      <Footer />
     </div>
   );
 }
