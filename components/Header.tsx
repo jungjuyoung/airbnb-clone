@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import { MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/20/solid';
 import { GlobeAltIcon, Bars4Icon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 export const Header = () => {
+  const [searchInput, setSearchInput] = useState('');
+
   return (
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10'>
       {/* Left */}
@@ -18,6 +21,8 @@ export const Header = () => {
       {/* Middle */}
       <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm'>
         <input
+          value={searchInput}
+          onChange={e => setSearchInput(e.target.value)}
           type='text'
           className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 '
           placeholder='Start your search'
