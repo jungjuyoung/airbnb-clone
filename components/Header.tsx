@@ -11,10 +11,15 @@ export const Header = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
+  const handleSelect = ranges => {
+    setStartDate(ranges.selection.startDate);
+    setEndDate(ranges.selection.endDate);
+  };
+
   const selectionRanges = {
     startDate,
     endDate,
-    key: 'Selection',
+    key: 'selection',
   };
 
   return (
@@ -52,7 +57,12 @@ export const Header = () => {
       </div>
       {searchInput && (
         <div>
-          <DateRangePicker ranges={[selectionRanges]} />
+          <DateRangePicker
+            ranges={[selectionRanges]}
+            minDate={new Date()}
+            rangeColors={['#FD5861']}
+            onChange={handleSelect}
+          />
         </div>
       )}
     </header>
