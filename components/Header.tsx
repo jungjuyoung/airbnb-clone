@@ -7,7 +7,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from 'next/router';
 
-export const Header = () => {
+export const Header = ({ placeholder }: string) => {
   const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -53,6 +53,7 @@ export const Header = () => {
           layout='fill'
           objectFit='contain'
           objectPosition='left'
+          alt='logo'
         />
       </div>
 
@@ -63,7 +64,7 @@ export const Header = () => {
           onChange={e => setSearchInput(e.target.value)}
           type='text'
           className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 '
-          placeholder='Start your search'
+          placeholder={placeholder || 'Start your search'}
         />
         <MagnifyingGlassIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2' />
       </div>
@@ -95,7 +96,9 @@ export const Header = () => {
               type='number'
               value={noOfGuests}
               min={1}
-              onChange={e => setNoOfGuests(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setNoOfGuests(e.target.value)
+              }
               className='w-12 pl-2 text-lg outline-none text-red-400'
             />
           </div>
