@@ -20,7 +20,15 @@ export const Header = () => {
   };
 
   const search = () => {
-    router.push('/search');
+    router.push({
+      pathname: '/search',
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        noOfGuests,
+      },
+    });
   };
 
   const selectionRanges = {
@@ -72,6 +80,7 @@ export const Header = () => {
       {searchInput && (
         <div className='flex flex-col col-span-3 mx-auto'>
           <DateRangePicker
+            style={{ border: '1px solid red' }}
             ranges={[selectionRanges]}
             minDate={new Date()}
             rangeColors={['#FD5861']}
