@@ -139,6 +139,7 @@ const Search = ({ searchResults }: IsearchResults) => {
                 title,
                 description,
                 star,
+                total,
                 price,
               }: IsearchResults) => (
                 <InfoCard
@@ -148,6 +149,7 @@ const Search = ({ searchResults }: IsearchResults) => {
                   title={title}
                   description={description}
                   star={star}
+                  total={total}
                   price={price}
                 />
               )
