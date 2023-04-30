@@ -5,7 +5,7 @@ import React from 'react';
 import { format } from 'date-fns';
 import InfoCard from '@/components/InfoCard';
 
-interface IsearchResults {
+export interface IsearchResults {
   img: string;
   location: string;
   title: string;

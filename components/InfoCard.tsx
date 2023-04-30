@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import IsearchResults from '../pages/search';
+import type { IsearchResults } from '../pages/search';
 import { HeartIcon } from '@heroicons/react/20/solid';
 import { StarIcon } from '@heroicons/react/20/solid';
 
@@ -11,7 +11,7 @@ const InfoCard = ({
   description,
   star,
   price,
-}) => {
+}: IsearchResults) => {
   return (
     <div className='flex py-7 px-2 pr-4 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t'>
       <div className='relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0'>
