@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { format } from 'date-fns';
 import InfoCard from '@/components/InfoCard';
+import Map from '@/components/Map';
 
 export interface IsearchResults {
   img: string;
@@ -155,6 +156,9 @@ const Search = ({ searchResults }: IsearchResults) => {
               )
             )}
           </div>
+        </section>
+        <section className='hidden xl:inline-flex'>
+          <Map />
         </section>
       </main>
       <Footer />

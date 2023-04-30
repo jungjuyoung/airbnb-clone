@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['links.papareact.com'],
   },
+  env: {},
 };
 
 module.exports = nextConfig;
