@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-import mapConfig from './config/dev';
+const { mapConfig } = require('./config/dev');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
