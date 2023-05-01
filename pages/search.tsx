@@ -112,7 +112,7 @@ const Search = ({ searchResults }: IsearchResults) => {
   const formatedEndDate = format(new Date(endDate), 'yy MMMM dd');
   const range = `${formatedStartDate} - ${formatedEndDate}`;
 
-  console.log(searchResults);
+  // console.log(searchResults);
 
   return (
     <div>
@@ -158,7 +158,7 @@ const Search = ({ searchResults }: IsearchResults) => {
           </div>
         </section>
         <section className='hidden xl:inline-flex xl:min-w-[600px]'>
-          <Map />
+          <Map searchResults={searchResults} />
         </section>
       </main>
       <Footer />
@@ -170,6 +170,7 @@ export default Search;
 
 export async function getServerSideProps() {
   // const searchResults = await fetch('https://links.papareact.com/isz');
+
   return {
     props: {
       searchResults,
