@@ -27,7 +27,8 @@ const Map = ({ searchResults }) => {
     longitude: center.longitude,
     zoom: 11,
   });
-  // console.log(`selectedLocattion: ${selectedLocation}`);
+
+  console.log(`selectedLocation: ${JSON.stringify(selectedLocation, null, 4)}`);
 
   return (
     <ReactMapGL
@@ -47,7 +48,7 @@ const Map = ({ searchResults }) => {
             <p
               role='img'
               onClick={() => setSelectedLocation(result)}
-              className='curosr-pointer text-2xl'
+              className='cursor-pointer text-2xl animate-bounce'
               aria-label='push-pin'
             >
               <MapPinIcon className='h-6 w-6 text-red-500' />
@@ -55,10 +56,10 @@ const Map = ({ searchResults }) => {
           </Marker>
 
           {/* The popup that should show if we click on a Marker */}
-          {selectedLocation.long == result.long ? (
+          {selectedLocation.long === result.long ? (
             <Popup
               onClose={() => setSelectedLocation({})}
-              closeOnClick={true}
+              closeOnClick={false}
               longitude={result.long}
               latitude={result.lat}
             >
