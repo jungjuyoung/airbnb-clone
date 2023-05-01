@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const { mapConfig } = require('./config/dev');
+const mapbox_key = require('./config/dev');
 
 const nextConfig = {
   reactStrictMode: true,
@@ -7,7 +7,7 @@ const nextConfig = {
     domains: ['links.papareact.com'],
   },
   env: {
-    mapbox_key: mapConfig,
+    mapbox_key,
   },
 };
 
